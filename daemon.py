@@ -3,9 +3,6 @@ import struct
 import serial
 import time
 
-#ser = serial.Serial(0)
-
-
 class NeoPixel(object):
     def __init__(self, port):
         self.port = port
@@ -37,12 +34,33 @@ class NeoPixel(object):
         print(response)
 
 
-import random
-
 if __name__ == "__main__":
-    strand = NeoPixel('/dev/ttyUSB0')
-        
-    strand.setPixelColor(x, 0, 0, 0)
-    strand.show()
+    strand = NeoPixel('/dev/ttyAMA0')
 
+    strand.setPixelColor(0, 255, 0, 0)
+    strand.show()
+    time.sleep(1)
+    strand.setPixelColor(0, 0, 255, 0)
+    strand.setPixelColor(1, 255, 0, 0)
+    strand.show()
+    time.sleep(1)
+    strand.setPixelColor(0, 0, 0, 255)
+    strand.setPixelColor(1, 0, 255, 0)
+    strand.setPixelColor(2, 255, 0, 0)
+    strand.show()
+    time.sleep(1)
+    strand.setPixelColor(0, 0, 0, 0)
+    strand.setPixelColor(1, 0, 0, 255)
+    strand.setPixelColor(2, 0, 255, 0)
+    strand.show()
+    time.sleep(1)
+    strand.setPixelColor(0, 0, 0, 0)
+    strand.setPixelColor(1, 0, 0, 0)
+    strand.setPixelColor(2, 0, 0, 255)
+    strand.show()
+    time.sleep(1)
+    strand.setPixelColor(0, 0, 0, 0)
+    strand.setPixelColor(1, 0, 0, 0)
+    strand.setPixelColor(2, 0, 0, 0)
+    strand.show()
 
