@@ -8,12 +8,6 @@ class NeoPixel(object):
         self.port = port
         self.ser = serial.Serial(self.port, 9600, timeout=60)
         self.command_count = 0
-        ready = None
-        while not ready:
-            print("Not ready")
-            ready = self.ser.readline()
-            print("Ready")
-            print(ready)
 
     def setPixelColor(self, pixel, red, green, blue):
         message = struct.pack('>BBBHBBB', ord(':'), self.command_count, ord('c'), pixel, red, green, blue)
