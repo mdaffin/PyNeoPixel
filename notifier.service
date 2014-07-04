@@ -1,0 +1,10 @@
+[Unit]
+Description=Docker Application Container Engine
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/notifier
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
