@@ -29,7 +29,9 @@ class NeoPixel(object):
 
 
 if __name__ == "__main__":
-    strand = NeoPixel('/dev/ttyAMA0')
+    import sys
+
+    strand = NeoPixel(sys.argv[1])
 
     strand.setPixelColor(0, 255, 0, 0)
     strand.show()
